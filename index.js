@@ -20,26 +20,6 @@ const controls = new OrbitControls(camera, renderer.domElement); // so that we c
 controls.enableDamping = true; 
 controls.dampingFactor = 0.05; // how fast the object moves after we mouseup (inertia of the obj)
 
-document.addEventListener("keydown", (event) => { // instead of moving the obj in its own
-                                                  // place around itself it moves it away and closer 
-                                                  // need to be fixed smth wrong with x z
-    switch(event.key) {
-        case 'ArrowLeft':
-            camera.position.x -= 0.1;
-            break;
-        case 'ArrowRight':
-            camera.position.x += 0.1;
-            break;
-        case 'ArrowUp': 
-            camera.position.z -= 0.1;
-            break;
-        case 'ArrowDown':
-            camera.position.z += 0.1;
-            break;
-        default:
-            break;
-    }
-});
 
 const geo = new THREE.IcosahedronGeometry(0.5, 1);
 const material = new THREE.MeshStandardMaterial({
